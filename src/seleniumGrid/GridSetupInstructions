@@ -1,0 +1,35 @@
+Once the file is downloaded you can start with hub creation.
+Open CMD and execute below command
+java -jar selenium-server-standalone-2.53.1.jar -role hub
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\VJ>java -jar V:\SeleniumJars\selenium-server-standalone-2.53.1.jar -role hub
+Once Selenium hub  is ready then you can check the status on the browser as well.
+
+Open http://localhost:4444/grid/console ----- on local browser and hit enter
+
+You will get below screen with no node connected
+
+ need to create node and "hub will manage the nodes". Let’s create a node and then trigger the test on the node.
+ 
+ 
+ To start the node execute below command and it will start the node
+
+java -jar selenium-server-standalone-2.53.1.jar -role node  -hub http://localhost:4444/grid/register
+
+
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\VJ>java -jar V:\SeleniumJars\selenium-server-standalone-2.53.1.jar -role 
+node -hub http://localhost:4444/grid/register
+
+Once node is connected just open the hub Dashboard and you can see node is connected and you can see the webdriver and RC instances
+By default, once node is created you will get 11 instances for WebDriver and 11 Instance of  RC
+5 Firefox, 5 Chrome and 1 IE browser
+It means you can run 5 FF,5 Chrome, and 1 IE browser if you want to run more test on this browser then you 
+can change from the command line while creating the node.
+
+
